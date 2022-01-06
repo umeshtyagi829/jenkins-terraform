@@ -6,6 +6,7 @@
         AWS_SECRET_KEY     = credentials('aws_secret_key')
         AWS_REGION         = "us-east-2"
     }
+    stages {
       stage('Terraform Init&Plan') {
         steps {
           sh 'terraform init'
@@ -27,3 +28,4 @@
         }
       }
     }
+  }
