@@ -9,8 +9,8 @@
     stages {
       stage('Terraform Init&Plan') {
         steps {
-          sh 'terraform init'
-          sh 'terraform plan -var region="$AWS_REGION" -var aws_access_key="$AWS_ACCESS_KEY" -var aws_secret_key="$AWS_SECRET_KEY"'
+          sh ('terraform init')
+          sh ('terraform plan -var region="$AWS_REGION" -var aws_access_key="$AWS_ACCESS_KEY" -var aws_secret_key="$AWS_SECRET_KEY"')
         }      
       }
 
@@ -24,7 +24,7 @@
 
       stage('Terraform Apply') {
         steps {
-          sh 'terraform apply --auto-approve -var region="$AWS_REGION" -var aws_access_key="$AWS_ACCESS_KEY" -var aws_secret_key="$AWS_SECRET_KEY" '
+          sh ('terraform apply --auto-approve -var region="$AWS_REGION" -var aws_access_key="$AWS_ACCESS_KEY" -var aws_secret_key="$AWS_SECRET_KEY"')
         }
       }
     }
