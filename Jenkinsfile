@@ -24,7 +24,7 @@
 
       stage('Terraform Apply') {
         steps {
-          sh 'terraform apply -var region="$AWS_REGION" -var aws_access_key="$AWS_ACCESS_KEY" -var aws_secret_key="$AWS_SECRET_KEY" '
+          sh 'terraform apply --auto-approve -var region="$AWS_REGION" -var aws_access_key="$AWS_ACCESS_KEY" -var aws_secret_key="$AWS_SECRET_KEY" '
         }
       }
     }
